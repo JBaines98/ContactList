@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Contact } from './contact.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ContactList';
+
+
+  //below should input parameter should be of type contact.
+    contactEntered(contact: any){}
 }
