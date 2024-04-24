@@ -20,6 +20,8 @@ export class FormComponent {
     addressSecondLine: new FormControl(''),
     cityOrTown: new FormControl(''),
     county: new FormControl(''),
+    postCode: new FormControl(''),
+    email: new FormControl(''),
     dateOfBirth: new FormControl(''),
     telephone: new FormControl(0),
   })
