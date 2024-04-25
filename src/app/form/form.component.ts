@@ -11,7 +11,7 @@ import { Subject, takeUntil, tap } from 'rxjs';
 })
 export class FormComponent {
 
-  public contact: any = {
+  public contact: Contact = {
     firstName: '',
     lastName: '',
     addressFirstLine: '',
@@ -55,6 +55,18 @@ export class FormComponent {
     // this.contactEntered.emit(this.contact);
     this.contactService.addContact(this.contact);
     console.log(this.contact);
+    this.contact = {
+      firstName: '',
+      lastName: '',
+      addressFirstLine: '',
+      addressSecondLine: '',
+      cityOrTown: '',
+      county: '',
+      postCode: '',
+      email: '',
+      dateOfBirth: '',
+      telephone: ''
+    };
 
     // this.contact.valueChanges.pipe(
     //   tap((changes) => {

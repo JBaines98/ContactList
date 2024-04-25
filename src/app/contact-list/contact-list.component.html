@@ -1,3 +1,17 @@
 <div>
     {{contact.firstName}}
+    {{contact.lastName}}
+    {{contact.addressFirstLine}}
+    {{contact.addressSecondLine}}
+    {{contact.cityOrTown}}
+    {{contact.county}}
+    {{contact.postCode}}
+    {{contact.email}}
+    {{contact.dateOfBirth}}
+    {{contact.telephone}}
 </div>
+<br>
+<div *ngIf="contact">
+    <hr>
+</div>
+
