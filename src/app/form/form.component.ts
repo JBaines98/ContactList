@@ -42,22 +42,26 @@ export class FormComponent {
   //   telephone: new FormControl(0),
   // })
 
-  ngOnInit(): void{
-    this.contact.valueChanges.pipe(
-      tap((changes) => {
-        this.contactEntered.emit(changes);
-      }),
-      takeUntil(this.destroyed$)
-    ).subscribe();
-  }
+  // ngOnInit(): void{
+  //   this.contact.valueChanges.pipe(
+  //     tap((changes) => {
+  //       this.contactEntered.emit(changes);
+  //     }),
+  //     takeUntil(this.destroyed$)
+  //   ).subscribe();
+  // }
 
   goButtonClicked(){
-    this.contact.valueChanges.pipe(
-      tap((changes) => {
-        this.contactEntered.emit(changes);
-      }),
-      takeUntil(this.destroyed$)
-    ).subscribe();
+    this.contactEntered.emit(this.contact);
+    this.contactService.addContact(this.contact);
+    console.log(this.contact);
+
+    // this.contact.valueChanges.pipe(
+    //   tap((changes) => {
+    //     this.contactEntered.emit(changes);
+    //   }),
+    //   takeUntil(this.destroyed$)
+    // ).subscribe();
   }
 
 }
