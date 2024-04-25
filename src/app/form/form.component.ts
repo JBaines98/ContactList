@@ -52,7 +52,7 @@ export class FormComponent {
   // }
 
   goButtonClicked(){
-    this.contactEntered.emit(this.contact);
+    // this.contactEntered.emit(this.contact);
     this.contactService.addContact(this.contact);
     console.log(this.contact);
 
