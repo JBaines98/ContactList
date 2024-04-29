@@ -51,7 +51,7 @@ export class FormComponent {
   //   ).subscribe();
   // }
 
-  goButtonClicked(){
+  goButtonClicked(): void{
     // this.contactEntered.emit(this.contact);
     this.contactService.addContact(this.contact);
     console.log(this.contact);
@@ -67,6 +67,23 @@ export class FormComponent {
       dateOfBirth: '',
       telephone: ''
     };
+  };
+
+    clearButtonClicked(): void{
+      this.contact = {
+        firstName: '',
+        lastName: '',
+        addressFirstLine: '',
+        addressSecondLine: '',
+        cityOrTown: '',
+        county: '',
+        postCode: '',
+        email: '',
+        dateOfBirth: '',
+        telephone: ''
+      };
+      console.log("Form cleared.");
+    };
 
     // this.contact.valueChanges.pipe(
     //   tap((changes) => {
@@ -74,6 +91,7 @@ export class FormComponent {
     //   }),
     //   takeUntil(this.destroyed$)
     // ).subscribe();
-  }
 
 }
+
+
