@@ -24,6 +24,10 @@ export class ContactListComponent {
     this.contactService.deleteContact(this.contact);
   };
 
+  openContactDetails(){
+    this.contactService.openContactDetails(this.contact);
+  }
+
   // ngOnInit(){
   //   this.contactService.contactsList$.pipe(
   //     tap((contactList) => {

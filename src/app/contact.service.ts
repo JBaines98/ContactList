@@ -10,9 +10,12 @@ export class ContactService {
   contactToAdd: Contact = {};
   contactToDelete: Contact = {};
   contactList: Contact[] = [];
+  contactDetailsToOpen: Contact = {};
 
   private behaviorContactsList$ = new BehaviorSubject<Contact[]>([{}]);
   public contactsList$ = this.behaviorContactsList$.asObservable();
+  private behaviorDetailsToOpen$ = new BehaviorSubject<Contact>({});
+  public contactDetailsToOpen$ = this.behaviorDetailsToOpen$.asObservable();
 
 
   constructor() {}
@@ -23,6 +26,11 @@ export class ContactService {
     this.behaviorContactsList$.next(this.contactList);
     console.log("Contact added.");
     this.contactToAdd = {};
+  };
+
+  openContactDetails(contact: Contact){
+    this.contactDetailsToOpen = contact;
+    this.behaviorDetailsToOpen$.next(this.contactDetailsToOpen);
   };
 
   deleteContact(contact: Contact){
