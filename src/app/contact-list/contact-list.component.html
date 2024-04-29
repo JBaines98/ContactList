@@ -1,52 +1,47 @@
 
-
-<br>
-<div>
-    <label>First Name</label>
-    <input class="border-solid 
-                    border-2 
-                    border-black
-                    ml-2"   >
-</div>
-<br>
-<div>
-    <label>Last Name</label>
-    <input class="border-solid 
-                    border-2 
-                    border-black
-                    ml-2">
-</div>
-<br>
-<div>
-    <label>Telephone</label>
-    <input class="border-solid 
-                    border-2 
-                    border-black
-                    ml-2">
-</div>
-
-<div>
-    {{contact.firstName}}
-    {{contact.lastName}}
-    {{contact.addressFirstLine}}
-    {{contact.addressSecondLine}}
-    {{contact.cityOrTown}}
-    {{contact.county}}
-    {{contact.postCode}}
-    {{contact.email}}
-    {{contact.dateOfBirth}}
-    {{contact.telephone}}
-
-<br>
-
-    <button class="border-solid
-                    border-2 
-                    border-black
-                    bg-red-500
-                    ml-2" (click)="deleteContact()">Delete</button>
+<div class="bg-gray-300 centre">
     <br>
-    <hr>
+    <div>
+        <label>First Name</label>
+        <input class="border-solid 
+                        border-2 
+                        border-black
+                        ml-2" readonly [(ngModel)]="contact.firstName">
+    </div>
+    <br>
+    <div>
+        <label>Last Name</label>
+        <input class="border-solid 
+                        border-2 
+                        border-black
+                        ml-2" readonly [(ngModel)]="contact.lastName">
+    </div>
+    <br>
+    <div>
+        <label>Telephone</label>
+        <input class="border-solid 
+                        border-2 
+                        border-black
+                        ml-2" readonly [(ngModel)]="contact.telephone">
+    </div>
+    <br>
+    <button class="border-solid
+    border-2 
+    border-black
+    bg-red-500
+    centre
+    ml-2" (click)="deleteContact()">Delete</button>
+    
 
 </div>
+
+<div class="bg-gray-300">
+    <br>
+</div>
+
+
+
+
+
 
 
