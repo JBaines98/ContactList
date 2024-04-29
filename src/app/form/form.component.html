@@ -1,22 +1,22 @@
-<div>
+<div class="bg-gray-300">
     <h3>
         Form / details
     </h3>
 </div>
 
-<hr>
+<hr class="hrLine">
 
-<br>
 
-<div>
-    
+
+<div class="bg-gray-300">
+    <br>
 
         <div>
             <label>First Name</label>
             <input [(ngModel)]="contact.firstName" 
                 class="border-solid 
                         border-2 
-                        border-sky-500
+                        border-black
                         ml-2">
         </div>
 
@@ -25,7 +25,7 @@
             <input [(ngModel)]="contact.lastName"
                 class="border-solid 
                         border-2 
-                        border-sky-500
+                        border-black
                         ml-2">
         </div>
 
@@ -34,7 +34,7 @@
             <input [(ngModel)]="contact.addressFirstLine"
                 class="border-solid 
                         border-2 
-                        border-sky-500
+                        border-black
                         ml-2">
         </div>
 
@@ -43,7 +43,7 @@
             <input [(ngModel)]="contact.addressSecondLine"
                 class="border-solid 
                         border-2 
-                        border-sky-500
+                        border-black
                         ml-2">
         </div>
 
@@ -52,7 +52,7 @@
             <input [(ngModel)]="contact.cityOrTown"
                 class="border-solid 
                         border-2 
-                        border-sky-500
+                        border-black
                         ml-2">
         </div>
 
@@ -61,7 +61,7 @@
             <input [(ngModel)]="contact.county"
                 class="border-solid 
                         border-2 
-                        border-sky-500
+                        border-black
                         ml-2">
         </div>
 
@@ -70,7 +70,7 @@
             <input [(ngModel)]="contact.postCode"
                 class="border-solid 
                         border-2 
-                        border-sky-500
+                        border-black
                         ml-2">
         </div>
 
@@ -79,7 +79,7 @@
             <input [(ngModel)]="contact.email"
                 class="border-solid 
                         border-2 
-                        border-sky-500
+                        border-black
                         ml-2">
         </div>
 
@@ -88,7 +88,7 @@
             <input [(ngModel)]="contact.dateOfBirth"
                 class="border-solid 
                         border-2 
-                        border-sky-500
+                        border-black
                         ml-2">
         </div>
 
@@ -97,21 +97,30 @@
             <input [(ngModel)]="contact.telephone"
                 class="border-solid 
                         border-2 
-                        border-sky-500
+                        border-black
                         ml-2">
         </div>
 
 
     
 </div>
-<br>
-<div>
+<div class="bg-gray-300">
+
+    <br>
 
     <span>
-        <button class="border-solid border-2 border-black ml-2" (click)="goButtonClicked()">
+        <button class="border-solid
+                        border-2 
+                        border-black
+                        bg-green-600
+                        ml-2" (click)="goButtonClicked()">
             <p class="ml-1 mr-1 mu-1 md-1">Go</p>
         </button>
     </span>
 
+    
+
 </div>
-<br>
+<div class="bg-gray-300">
+    <br>
+</div>
