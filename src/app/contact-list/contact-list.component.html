@@ -1,3 +1,30 @@
+
+
+<br>
+<div>
+    <label>First Name</label>
+    <input class="border-solid 
+                    border-2 
+                    border-black
+                    ml-2"   >
+</div>
+<br>
+<div>
+    <label>Last Name</label>
+    <input class="border-solid 
+                    border-2 
+                    border-black
+                    ml-2">
+</div>
+<br>
+<div>
+    <label>Telephone</label>
+    <input class="border-solid 
+                    border-2 
+                    border-black
+                    ml-2">
+</div>
+
 <div>
     {{contact.firstName}}
     {{contact.lastName}}
@@ -12,7 +39,11 @@
 
 <br>
 
-    <button class="border-solid border-2 border-black ml-2" (click)="deleteContact()">X</button>
+    <button class="border-solid
+                    border-2 
+                    border-black
+                    bg-red-500
+                    ml-2" (click)="deleteContact()">Delete</button>
     <br>
     <hr>
 
