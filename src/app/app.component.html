@@ -4,11 +4,21 @@
 
 
 <div class="flex flex-row">
-  <div class="contactList" *ngFor="let contactDetails of contactList">
-    <app-contact-list [contact]="contactDetails"
-     [showFunctions]="true"
-     >
-    </app-contact-list>
+  <div class="contactList">
+    <div class="bg-gray-400 centre">
+      <br>
+      <h3 class="text-3xl
+                  align-middle">
+          Contact List
+      </h3>
+      <br>
+  </div>
+    <div  *ngFor="let contactDetails of contactList">
+      <app-contact-list [contact]="contactDetails"
+       [showFunctions]="true"
+       >
+      </app-contact-list>
+    </div>
   </div>
   <div class="form">
     <!-- <app-form (contactEntered)="contactEntered($event)"></app-form> -->
