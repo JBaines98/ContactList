@@ -29,6 +29,20 @@ export class FormComponent {
 
   @Output() contactEntered = new EventEmitter();
 
+  ngOnInit(){
+    this.contactService.contactDetailsToOpen$.pipe(
+      tap((contactDetails) => {
+        this.contact = contactDetails;
+      }),
+      takeUntil(this.destroyed$)
+    ).subscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next(this.destroyed$);
+    this.destroyed$.complete();
+  }
+
   // contactForm = new FormGroup({
   //   firstName: new FormControl(''),
   //   lastName: new FormControl(''),
