@@ -5,6 +5,7 @@
 
 <div class="flex flex-row">
   <div class="contactList">
+
     <div class="bg-gray-400 centre">
       <br>
       <h3 class="text-3xl
@@ -12,13 +13,18 @@
           Contact List
       </h3>
       <br>
-  </div>
-    <div  *ngFor="let contactDetails of contactList">
-      <app-contact-list [contact]="contactDetails"
-       [showFunctions]="true"
-       >
-      </app-contact-list>
     </div>
+
+    <div *ngIf="contactList">
+      <div *ngFor="let contactDetails of contactList">
+        <app-contact-list [contact]="contactDetails"
+         [showFunctions]="true"
+         >
+        </app-contact-list>
+      </div>
+    </div>
+
+
   </div>
   <div class="form">
     <!-- <app-form (contactEntered)="contactEntered($event)"></app-form> -->
