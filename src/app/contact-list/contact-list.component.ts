@@ -10,8 +10,6 @@ import { Subject, takeUntil, tap } from 'rxjs';
 })
 export class ContactListComponent {
 
-  contactToDelete: Contact = {};
-
   public destroyed$ = new Subject();
   @Input() showFunctions: boolean = false;
   @Input() contact: Contact = {};
@@ -20,7 +18,6 @@ export class ContactListComponent {
 
 
   deleteContact(){
-    this.contactToDelete = this.contact;
     this.contactService.deleteContact(this.contact);
   };
 

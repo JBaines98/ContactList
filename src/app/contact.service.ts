@@ -8,7 +8,6 @@ import { BehaviorSubject } from 'rxjs';
 export class ContactService {
 
   contactToAdd: Contact = {};
-  contactToDelete: Contact = {};
   contactList: Contact[] = [];
   contactDetailsToOpen: Contact = {};
 
@@ -34,7 +33,12 @@ export class ContactService {
   };
 
   deleteContact(contact: Contact){
-    // this.contactToDelete = contact;
+    const index: number = this.contactList.indexOf(contact);
+    if(index !== -1){
+      this.contactList.splice(index, 1);
+    }
+    this.behaviorContactsList$.next(this.contactList);
+
     // this.contactList = this.contactList.filter((el) => !contact.includes(el))
     // this.contactList = this.contactList.filter((list) => {
     //   list.firstName === contact.firstName;
