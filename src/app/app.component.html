@@ -5,7 +5,10 @@
 <br>
 <div class="flex flex-row">
   <div class="contactList" *ngFor="let contactDetails of contactList">
-    <app-contact-list [contact]="contactDetails"></app-contact-list>
+    <app-contact-list [contact]="contactDetails"
+     [showFunctions]="true"
+     >
+    </app-contact-list>
   </div>
   <div class="form">
     <!-- <app-form (contactEntered)="contactEntered($event)"></app-form> -->

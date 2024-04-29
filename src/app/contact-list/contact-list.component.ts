@@ -10,11 +10,19 @@ import { Subject, takeUntil, tap } from 'rxjs';
 })
 export class ContactListComponent {
 
-  contactList: Contact[] = [];
+  contactToDelete: Contact = {};
+
   public destroyed$ = new Subject();
+  @Input() showFunctions: boolean = false;
   @Input() contact: Contact = {};
 
   constructor(public contactService: ContactService){}
+
+
+  deleteContact(){
+    this.contactToDelete = this.contact;
+    this.contactService.deleteContact(this.contact);
+  };
 
   // ngOnInit(){
   //   this.contactService.contactsList$.pipe(
