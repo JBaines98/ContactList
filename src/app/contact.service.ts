@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Contact } from './contact.model';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject, takeUntil, tap } from 'rxjs';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +12,27 @@ export class ContactService {
   contactList: Contact[] = [];
   contactDetailsToOpen: Contact = {};
 
+  public destroyed$ = new Subject();
   private behaviorContactsList$ = new BehaviorSubject<Contact[]>([{}]);
   public contactsList$ = this.behaviorContactsList$.asObservable();
   private behaviorDetailsToOpen$ = new BehaviorSubject<Contact>({});
   public contactDetailsToOpen$ = this.behaviorDetailsToOpen$.asObservable();
 
+  constructor(public localStorageService: LocalStorageService) {
+    this.localStorageService.getSavedContactsSaved()
+    this.localStorageService.savedContacts$.pipe(
+      tap((savedContactList: any) => {
+        this.contactList = savedContactList;
+        this.behaviorContactsList$.next(this.contactList);
+      }),
+      takeUntil(this.destroyed$)
+    ).subscribe();
+  }
 
-  constructor() {}
+  ngOnDestroy(): void {
+    this.destroyed$.next(this.destroyed$);
+    this.destroyed$.complete();
+  };
    
   addContact(contact: Contact){
     this.contactToAdd = contact;
@@ -31,6 +46,10 @@ export class ContactService {
     this.contactDetailsToOpen = contact;
     this.behaviorDetailsToOpen$.next(this.contactDetailsToOpen);
   };
+
+  saveContactsList(contactList: Contact[]){
+    this.localStorageService.saveContactList(contactList);
+  }
 
   deleteContact(contact: Contact){
     const index: number = this.contactList.indexOf(contact);

@@ -12,7 +12,7 @@ import { JsonPipe } from '@angular/common';
 export class AppComponent {
   title = 'ContactList';
   contactList: Contact[] = [];
-  contactListString: any = null;
+
   public destroyed$ = new Subject();
 
   constructor(public contactService: ContactService){}
@@ -24,9 +24,7 @@ export class AppComponent {
       }),
       takeUntil(this.destroyed$)
     ).subscribe();
-    let savedContacts = localStorage.getItem('app.contactList');
-    this.contactListString = savedContacts;
-    console.log(this.contactListString);
+
   }
 
   ngOnDestroy(): void {
@@ -35,9 +33,10 @@ export class AppComponent {
   }
 
   saveContactList(){
-    let contactListToSave = this.contactList;
-    localStorage.setItem('app.contactList', JSON.stringify(contactListToSave));
+    this.contactService.saveContactsList(this.contactList);
   }
+
+
 
   //below should input parameter should be of type contact.
     contactEntered(contact: any){}

@@ -7,12 +7,33 @@ import { Contact } from './contact.model';
 })
 export class LocalStorageService {
 
+  savedContacts: any = undefined;
+
   private behaviorSavedContacts$ = new BehaviorSubject<Contact[]>([{}]);
   public savedContacts$ = this.behaviorSavedContacts$.asObservable();
 
   constructor() { }
 
-  addContactToSavedArray(){}
+  ngOnInit(){
 
-  getSavedContactsSaved(){}
+  }
+
+  saveContactList(contactList: Contact[]){
+    let contactListToSave = contactList;
+    localStorage.setItem('app.contactList', JSON.stringify(contactListToSave));
+    console.log("Contacts Saved.");
+  }
+
+  getSavedContactsSaved(){
+    if(localStorage !== null){
+      this.savedContacts = JSON.parse(localStorage.getItem('app.contactList') || '[{}]');
+      this.behaviorSavedContacts$.next(this.savedContacts)
+      console.log("TEST");
+    }else{
+      console.log("No saved contacts.")
+    }
+
+  }
+
+
 }
