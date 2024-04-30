@@ -14,26 +14,33 @@ export class LocalStorageService {
 
   constructor() { }
 
-  ngOnInit(){
-
-  }
 
   saveContactList(contactList: Contact[]){
     let contactListToSave = contactList;
     localStorage.setItem('app.contactList', JSON.stringify(contactListToSave));
     console.log("Contacts Saved.");
-  }
+  };
+
+  removeFromSavedJobs(contact: Contact){
+    const index: number = this.savedContacts.indexOf(contact);
+    if(index !== 1){
+      this.savedContacts.splice(index, 1);
+    }
+    localStorage.setItem('app.contactList', JSON.stringify(this.savedContacts));
+    this.behaviorSavedContacts$.next(this.savedContacts);
+    console.log("Removed from saved contacts.");
+  };
 
   getSavedContactsSaved(){
     if(localStorage !== null){
       this.savedContacts = JSON.parse(localStorage.getItem('app.contactList') || '[{}]');
-      this.behaviorSavedContacts$.next(this.savedContacts)
+      this.behaviorSavedContacts$.next(this.savedContacts);
       console.log("TEST");
     }else{
       console.log("No saved contacts.")
     }
 
-  }
+  };
 
 
 }

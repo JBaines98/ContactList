@@ -49,7 +49,11 @@ export class ContactService {
 
   saveContactsList(contactList: Contact[]){
     this.localStorageService.saveContactList(contactList);
-  }
+  };
+
+  removeFromSavedjobs(contact: Contact){
+    this.localStorageService.removeFromSavedJobs(contact);
+  };
 
   deleteContact(contact: Contact){
     const index: number = this.contactList.indexOf(contact);

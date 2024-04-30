@@ -23,7 +23,11 @@ export class ContactListComponent {
 
   openContactDetails(){
     this.contactService.openContactDetails(this.contact);
-  }
+  };
+
+  removeFromSavedJobs(){
+    this.contactService.removeFromSavedjobs(this.contact);
+  };
 
   // ngOnInit(){
   //   this.contactService.contactsList$.pipe(
