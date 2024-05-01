@@ -31,6 +31,14 @@ export class LocalStorageService {
     console.log("Removed from saved contacts.");
   };
 
+  clearSavedJobs(){
+    localStorage.clear();
+    this.savedContacts = [{}];
+    this.behaviorSavedContacts$.next(this.savedContacts);
+    console.log("Saved jobs cleared.");
+    
+  };
+
   getSavedContactsSaved(){
     if(localStorage !== null){
       this.savedContacts = JSON.parse(localStorage.getItem('app.contactList') || '[{}]');

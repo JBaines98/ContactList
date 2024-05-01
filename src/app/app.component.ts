@@ -25,16 +25,20 @@ export class AppComponent {
       takeUntil(this.destroyed$)
     ).subscribe();
 
-  }
+  };
 
   ngOnDestroy(): void {
     this.destroyed$.next(this.destroyed$);
     this.destroyed$.complete();
-  }
+  };
 
   saveContactList(){
     this.contactService.saveContactsList(this.contactList);
-  }
+  };
+
+  clearSavedJobs(){
+    this.contactService.clearSaveJobs();
+  };
 
 
 

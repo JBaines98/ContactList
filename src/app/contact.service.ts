@@ -55,6 +55,10 @@ export class ContactService {
     this.localStorageService.removeFromSavedJobs(contact);
   };
 
+  clearSaveJobs(){
+    this.localStorageService.clearSavedJobs();
+  };
+
   deleteContact(contact: Contact){
     const index: number = this.contactList.indexOf(contact);
     if(index !== -1){
