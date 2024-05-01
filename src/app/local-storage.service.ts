@@ -22,7 +22,7 @@ export class LocalStorageService {
   };
 
   removeFromSavedJobs(contact: Contact){
-    const index: number = this.savedContacts.indexOf(contact);m
+    const index: number = this.savedContacts.indexOf(contact);
     this.savedContacts.splice(index, 1);
     // if(index !== 1 && index !==0){
 
