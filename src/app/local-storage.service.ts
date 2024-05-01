@@ -22,10 +22,12 @@ export class LocalStorageService {
   };
 
   removeFromSavedJobs(contact: Contact){
-    const index: number = this.savedContacts.indexOf(contact);
-    if(index !== 1){
-      this.savedContacts.splice(index, 1);
-    }
+    const index: number = this.savedContacts.indexOf(contact);m
+    this.savedContacts.splice(index, 1);
+    // if(index !== 1 && index !==0){
+
+    //   console.log("IF HIT");
+    // }
     localStorage.setItem('app.contactList', JSON.stringify(this.savedContacts));
     this.behaviorSavedContacts$.next(this.savedContacts);
     console.log("Removed from saved contacts.");
