@@ -1,12 +1,13 @@
-<div class="componentBorder">
+<div class="border-2 border-black border-regular">
   <app-header></app-header>
 </div>
 
 
 <div class="flex flex-row">
-  <div class="contactList bg-gray-400">
+  <div class="contactList bg-gray-300 border-black border-l-2 border-b-2">
 
-    <div class="bg-gray-400 centre">
+    <div class="bg-gray-400 centre border-b-2 border-black">
+      <!-- border-black border-2 -->
       <br>
       <span>
         <h3 class="align-middle">
@@ -32,10 +33,12 @@
 
     <div *ngIf="contactList">
       <div *ngFor="let contactDetails of contactList">
-        <app-contact-list [contact]="contactDetails"
-         [showFunctions]="true"
-         >
-        </app-contact-list>
+        <div class="w-5/6 mt-6 mr-6 mb-6 ml-6">
+          <app-contact-list [contact]="contactDetails"
+          [showFunctions]="true"
+          >
+         </app-contact-list>
+        </div>
       </div>
     </div>
 
@@ -50,6 +53,6 @@
 
 
 
-<
+
 
 

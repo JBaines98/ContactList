@@ -3,8 +3,11 @@
 }
 .centre{
     text-align: center;
-    align: auto;
 }
 .margin{
     margin-left: 20%;
+}
+.centreTable{
+    margin-left: auto;
+    margin-right: auto;
 }
