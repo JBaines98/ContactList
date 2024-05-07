@@ -40,8 +40,6 @@ export class AppComponent {
     this.contactService.clearSaveJobs();
   };
 
-
-
   //below should input parameter should be of type contact.
-    contactEntered(contact: any){}
+    contactEntered(contact: any){};
 }
