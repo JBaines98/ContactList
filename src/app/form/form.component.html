@@ -1,4 +1,4 @@
-<div class="bg-gray-400 centre border-black border-l-2 border-b-2 border-r-2"> 
+<div class="bg-gray-400 centre border-black border-b-2"> 
     <!-- border-regular border-2 border-black -->
     <br>
     <h3 class="text-3xl
@@ -11,173 +11,186 @@
 
 <!-- <hr class="hrLine"> -->
 
-<div class="border-black border-r-2 border-l-2">
-    <table class="centreTable">
-        <tr>
-            <th class="w-32">
-                <p class="centre">
+<div>
+    <div class="centreTable border-regular border-black border-2 w-5/6 mt-6 mr-6 mb-6 ml-6 bg-gray-400">
+        <table class="centreTable">
+            <tr>
+                <th class="w-32">
+                    <p class="centre">
+                        
+                    </p>
+                </th>
+                <th>
                     
-                </p>
-            </th>
-            <th>
-                
-            </th>
-            <th>
-                
-            </th>
-        </tr>
-        <br>
-        <tr>
-            <td class="centre">
-                <i class="fa-solid fa-user"></i>
-            </td>
-            <td>
-                First Name
-            </td>
-            <td>
-                <input [(ngModel)]="contact.firstName"
-                    class="border-solid
-                            border-2
-                            border-black
-                            ml-2">
-            </td>
-        </tr>
-        <tr>
-            <td class="centre">
-                <i class="fa-solid fa-people-group"></i>
-            </td>
-            <td>
-                Last Name
-            </td>
-            <td>
-                <input [(ngModel)]="contact.lastName"
-                    class="border-solid
-                            border-2
-                            border-black
-                            ml-2">
-            </td>
-        </tr>
-        <tr>
-            <td class="centre">
-                <i class="fa-solid fa-location-dot"></i>
-            </td>
-            <td>
-                Address First Line
-            </td>
-            <td>
-                <input [(ngModel)]="contact.addressFirstLine"
-                    class="border-solid
-                            border-2
-                            border-black
-                            ml-2">
-            </td>
-        </tr>
-        <tr>
-            <td class="centre">
-                <i class="fa-solid fa-location-dot"></i>
-            </td>
-            <td>
-                Address Second Line
-            </td>
-            <td>
-                <input [(ngModel)]="contact.addressSecondLine"
-                    class="border-solid
-                            border-2
-                            border-black
-                            ml-2">
-            </td>
-        </tr>
-        <tr>
-            <td class="centre">
-                <i class="fa-solid fa-city"></i>
-            </td>
-            <td>
-                City or Town
-            </td>
-            <td>
-                <input [(ngModel)]="contact.cityOrTown"
-                    class="border-solid
-                            border-2
-                            border-black
-                            ml-2">
-            </td>
-        </tr>
-        <tr>
-            <td class="centre">
-                <i class="fa-solid fa-tower-cell"></i>
-            </td>
-            <td>
-                County
-            </td>
-            <td>
-                <input [(ngModel)]="contact.county"
-                    class="border-solid
-                            border-2
-                            border-black
-                            ml-2">
-            </td>
-        </tr>
-        <tr>
-            <td class="centre">
-                <i class="fa-solid fa-envelope"></i>
-            </td>
-            <td>
-                Post Code
-            </td>
-            <td>
-                <input [(ngModel)]="contact.postCode"
-                    class="border-solid
-                            border-2
-                            border-black
-                            ml-2">
-            </td>
-        </tr>
-        <tr>
-            <td class="centre">
-                <i class="fa-solid fa-at"></i>
-            </td>
-            <td>
-                Email Address
-            </td>
-            <td>
-                <input [(ngModel)]="contact.email"
-                    class="border-solid
-                            border-2
-                            border-black
-                            ml-2">
-            </td>
-        </tr>
-        <tr>
-            <td class="centre">
-                <i class="fa-solid fa-calendar-days"></i>
-            </td>
-            <td>
-                Date of Birth
-            </td>
-            <td>
-                <input [(ngModel)]="contact.dateOfBirth"
-                    class="border-solid
-                            border-2
-                            border-black
-                            ml-2">
-            </td>
-        </tr>
-        <tr>
-            <td class="centre">
-                <i class="fa-solid fa-phone"></i>
-            </td>
-            <td>
-                Telephone
-            </td>
-            <td>
-                <input [(ngModel)]="contact.telephone"
-                    class="border-solid
-                            border-2
-                            border-black
-                            ml-2">
-            </td>
-        </tr>
-    </table>
+                </th>
+                <th>
+                    
+                </th>
+            </tr>
+            <br>
+            <tr>
+                <td class="centre">
+                    <i class="fa-solid fa-user"></i>
+                </td>
+                <td>
+                    First Name
+                </td>
+                <td>
+                    <input [(ngModel)]="contact.firstName"
+                        class="border-solid
+                                border-2
+                                border-black
+                                ml-2 bg-gray-300">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td class="centre">
+                    <i class="fa-solid fa-people-group"></i>
+                </td>
+                <td>
+                    Last Name
+                </td>
+                <td>
+                    <input [(ngModel)]="contact.lastName"
+                        class="border-solid
+                                border-2
+                                border-black
+                                ml-2 bg-gray-300">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td class="centre">
+                    <i class="fa-solid fa-location-dot"></i>
+                </td>
+                <td>
+                    Address First Line
+                </td>
+                <td>
+                    <input [(ngModel)]="contact.addressFirstLine"
+                        class="border-solid
+                                border-2
+                                border-black
+                                ml-2 bg-gray-300">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td class="centre">
+                    <i class="fa-solid fa-location-dot"></i>
+                </td>
+                <td>
+                    Address Second Line
+                </td>
+                <td>
+                    <input [(ngModel)]="contact.addressSecondLine"
+                        class="border-solid
+                                border-2
+                                border-black
+                                ml-2 bg-gray-300">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td class="centre">
+                    <i class="fa-solid fa-city"></i>
+                </td>
+                <td>
+                    City or Town
+                </td>
+                <td>
+                    <input [(ngModel)]="contact.cityOrTown"
+                        class="border-solid
+                                border-2
+                                border-black
+                                ml-2 bg-gray-300">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td class="centre">
+                    <i class="fa-solid fa-tower-cell"></i>
+                </td>
+                <td>
+                    County
+                </td>
+                <td>
+                    <input [(ngModel)]="contact.county"
+                        class="border-solid
+                                border-2
+                                border-black
+                                ml-2 bg-gray-300">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td class="centre">
+                    <i class="fa-solid fa-envelope"></i>
+                </td>
+                <td>
+                    Post Code
+                </td>
+                <td>
+                    <input [(ngModel)]="contact.postCode"
+                        class="border-solid
+                                border-2
+                                border-black
+                                ml-2 bg-gray-300">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td class="centre">
+                    <i class="fa-solid fa-at"></i>
+                </td>
+                <td>
+                    Email Address
+                </td>
+                <td>
+                    <input [(ngModel)]="contact.email"
+                        class="border-solid
+                                border-2
+                                border-black
+                                ml-2 bg-gray-300">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td class="centre">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </td>
+                <td>
+                    Date of Birth
+                </td>
+                <td>
+                    <input [(ngModel)]="contact.dateOfBirth"
+                        class="border-solid
+                                border-2
+                                border-black
+                                ml-2 bg-gray-300">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td class="centre">
+                    <i class="fa-solid fa-phone"></i>
+                </td>
+                <td>
+                    Telephone
+                </td>
+                <td>
+                    <input [(ngModel)]="contact.telephone"
+                        class="border-solid
+                                border-2
+                                border-black
+                                ml-2 bg-gray-300">
+                </td>
+            </tr>
+            <br>
+        </table>
+    </div>
+
 </div>
 
 
@@ -281,7 +294,7 @@
 
     
 </div> -->
-<div class="bg-gray-300 centre border-black border-l-2 border-r-2">
+<div class="bg-gray-300 centre">
 
     <br>
 
@@ -305,6 +318,6 @@
 
 
 </div>
-<div class="bg-gray-300 border-black border-l-2 border-r-2 border-b-2">
+<div class="bg-gray-300 border-black border-b-2">
     <br>
 </div>

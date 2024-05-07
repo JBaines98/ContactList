@@ -11,7 +11,7 @@ border-black">
                     <input class="border-solid 
                                     border-2 
                                     border-black
-                                    ml-2" readonly [(ngModel)]="contact.firstName">
+                                    ml-2 bg-gray-300" readonly [(ngModel)]="contact.firstName">
                 </div>
                 <br>
                 <div>
@@ -20,7 +20,7 @@ border-black">
                     <input class="border-solid 
                                     border-2 
                                     border-black
-                                    ml-2" readonly [(ngModel)]="contact.lastName">
+                                    ml-2 bg-gray-300" readonly [(ngModel)]="contact.lastName">
                 </div>
                 <br>
                 <div>
@@ -29,7 +29,7 @@ border-black">
                     <input class="border-solid 
                                     border-2 
                                     border-black
-                                    ml-2" readonly [(ngModel)]="contact.telephone">
+                                    ml-2 bg-gray-300" readonly [(ngModel)]="contact.telephone">
                 </div>
                 <br>
                 <button class="border-solid
@@ -54,6 +54,7 @@ border-black">
                 border-2
                 border-black
                 ml-2
+                mt-2
                 bg-fuchsia-400" (click)="removeFromSavedJobs()">
                     <p class="ml-1 mr-1 mu-1 md-1">Remove from saved contacts</p>
                 </button>

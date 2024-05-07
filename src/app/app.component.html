@@ -16,19 +16,19 @@
             <i class="fa-regular fa-rectangle-list"></i>
           </span>
 
-          <button class="w-40 border-2 border-black ml-2 bg-amber-400"
-           (click)="saveContactList()">
-            Save Contact List
-          </button>
-          <button class="w-40 border-2 border-black ml-2 bg-amber-400"
-          (click)="clearSavedJobs()">
-            Clear Saved Contacts
-          </button>
-        </h3>
 
+        </h3>
       </span>
 
-      <br>
+      <button class="w-40 border-2 border-black ml-2 bg-amber-400 mt-4 mb-4"
+        (click)="saveContactList()">
+        Save Contact List
+      </button>
+      <button class="w-40 border-2 border-black ml-2 bg-amber-400 mt-4 mb-4"
+        (click)="clearSavedJobs()">
+        Clear Saved Contacts
+      </button>
+
     </div>
 
     <div *ngIf="contactList">
@@ -44,7 +44,7 @@
 
 
   </div>
-  <div class="form bg-gray-300">
+  <div class="form bg-gray-300 border-black border-l-2 border-r-2">
     <!-- <app-form (contactEntered)="contactEntered($event)"></app-form> -->
     <app-form></app-form>
   </div>
