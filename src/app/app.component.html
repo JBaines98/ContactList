@@ -2,57 +2,51 @@
   <app-header></app-header>
 </div>
 
-
 <div class="flex flex-row">
   <div class="contactList bg-gray-300 border-black border-l-2 border-b-2">
-
     <div class="bg-gray-400 centre border-b-2 border-black">
       <!-- border-black border-2 -->
-      <br>
+      <br />
       <span>
         <h3 class="align-middle">
           <span class="text-3xl">
             Contact List
             <i class="fa-regular fa-rectangle-list"></i>
           </span>
-
-
         </h3>
       </span>
 
-      <button class="w-40 border-2 border-black ml-2 bg-amber-400 rounded-lg mt-4 mb-4"
-        (click)="saveContactList()">
+      <button
+        class="w-40 border-2 border-black ml-2 bg-amber-400 rounded-lg mt-4 mb-4"
+        (click)="saveContactList()"
+      >
         Save Contact List
       </button>
-      <button class="w-40 border-2 border-black ml-2 bg-amber-400 rounded-lg mt-4 mb-4"
-        (click)="clearSavedJobs()">
+      <button
+        class="w-40 border-2 border-black ml-2 bg-amber-400 rounded-lg mt-4 mb-4"
+        (click)="clearSavedJobs()"
+      >
         Clear Saved Contacts
       </button>
-
     </div>
 
-    <div *ngIf="contactList">
+    <div *ngIf="contactList.length > 0; else noContacts">
       <div *ngFor="let contactDetails of contactList">
         <div class="w-5/6 mt-6 mr-6 mb-6 ml-6">
-          <app-contact-list [contact]="contactDetails"
-          [showFunctions]="true"
-          >
-         </app-contact-list>
+          <app-contact-list [contact]="contactDetails" [showFunctions]="true">
+          </app-contact-list>
         </div>
       </div>
     </div>
-
-
+    <ng-template #noContacts>
+      <h4>No saved contacts.</h4>
+    </ng-template>
   </div>
+
+
+
   <div class="form bg-gray-300 border-black border-l-2 border-r-2">
     <!-- <app-form (contactEntered)="contactEntered($event)"></app-form> -->
     <app-form></app-form>
   </div>
 </div>
-
-
-
-
-
-
-

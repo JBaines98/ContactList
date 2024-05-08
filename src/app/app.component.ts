@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Contact } from './contact.model';
 import { ContactService } from './contact.service';
-import { Subject, takeUntil, tap } from 'rxjs';
+import { Subject, filter, takeUntil, tap } from 'rxjs';
 import { JsonPipe } from '@angular/common';
 
 @Component({
@@ -12,6 +12,7 @@ import { JsonPipe } from '@angular/common';
 export class AppComponent {
   title = 'ContactList';
   contactList: Contact[] = [];
+  showContactList: boolean = true;
 
   public destroyed$ = new Subject();
 
@@ -38,6 +39,7 @@ export class AppComponent {
 
   clearSavedJobs(){
     this.contactService.clearSaveJobs();
+    this.showContactList = false;
   };
 
   //below should input parameter should be of type contact.

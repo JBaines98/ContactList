@@ -17,7 +17,7 @@ export class LocalStorageService {
 
   saveContactList(contactList: Contact[]){
     let contactListToSave = contactList;
-    localStorage.setItem('app.contactList', JSON.stringify(contactListToSave));
+    this.saveToLocalStorage(contactListToSave);
     console.log("Contacts Saved.");
   };
 
@@ -28,7 +28,7 @@ export class LocalStorageService {
 
     //   console.log("IF HIT");
     // }
-    localStorage.setItem('app.contactList', JSON.stringify(this.savedContacts));
+    this.saveToLocalStorage(this.savedContacts);
     this.behaviorSavedContacts$.next(this.savedContacts);
     console.log("Removed from saved contacts.");
   };
@@ -37,8 +37,8 @@ export class LocalStorageService {
     localStorage.clear();
     this.savedContacts = [{}];
     this.behaviorSavedContacts$.next(this.savedContacts);
+    this.saveToLocalStorage(this.savedContacts);
     console.log("Saved jobs cleared.");
-    
   };
 
   getSavedContactsSaved(){
@@ -50,6 +50,10 @@ export class LocalStorageService {
       console.log("No saved contacts.")
     }
 
+  };
+
+  private saveToLocalStorage(toSave: any){
+    localStorage.setItem('app.contactList', JSON.stringify(toSave));
   };
 
 
