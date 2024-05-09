@@ -30,17 +30,18 @@
       </button>
     </div>
 
-    <div *ngIf="contactList.length > 0; else noContacts">
-      <div *ngFor="let contactDetails of contactList">
-        <div class="w-5/6 mt-6 mr-6 mb-6 ml-6">
-          <app-contact-list [contact]="contactDetails" [showFunctions]="true">
-          </app-contact-list>
-        </div>
-      </div>
-    </div>
-    <ng-template #noContacts>
-      <h4>No saved contacts.</h4>
-    </ng-template>
+    
+      @if (contactList.length > 0){
+        @for (contact of contactList; track contact){
+          <div class="w-5/6 mt-6 mr-6 mb-6 ml-6">
+            <app-contact-list [contact]="contact" [showFunctions]="true">
+            </app-contact-list>
+          </div>
+        }
+      } @else {
+        <br>
+        <app-no-saved-contacts></app-no-saved-contacts>
+      }
   </div>
 
 
