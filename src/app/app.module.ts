@@ -5,19 +5,21 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { FormComponent } from './form/form.component';
+import { NoSavedContactsComponent } from "./no-saved-contacts/no-saved-contacts.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    ContactListComponent,
-    FormComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        ContactListComponent,
+        FormComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        NoSavedContactsComponent
+    ]
 })
 export class AppModule { }
