@@ -13,8 +13,13 @@ export class ContactListComponent {
   public destroyed$ = new Subject();
   @Input() showFunctions: boolean = false;
   @Input() contact: Contact = {};
+  @Input() indexNumber: number = 0;
 
   constructor(public contactService: ContactService){}
+
+  ngOnInit(){
+    this.indexNumber = this.indexNumber + 1;
+  }
 
 
   deleteContact(){

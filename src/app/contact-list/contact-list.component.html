@@ -3,90 +3,96 @@ border-2
 border-regular
 rounded-lg
 border-black">
+    <div class="bg-gray-400">
 
-            <div class="bg-gray-400 centre">
-                <br>
-                <div>
-                    <i class="fa-solid fa-user margin"></i>
-                    <label>First Name</label>
-                    <input class="border-solid 
-                                    border-2 
-                                    border-black
-                                    rounded-lg
-                                    ml-2
-                                    pl-1
-                                    pt-1
-                                    pb-1
-                                    pr-1 
-                                    bg-gray-300" readonly [(ngModel)]="contact.firstName">
-                </div>
-                <br>
-
-
-                <div>
-                    <i class="fa-solid fa-people-group margin"></i>
-                    <label>Last Name</label>
-                    <input class="border-solid 
-                                    border-2 
-                                    border-black
-                                    rounded-lg
-                                    ml-2
-                                    pl-1
-                                    pt-1
-                                    pb-1
-                                    pr-1 
-                                    bg-gray-300" readonly [(ngModel)]="contact.lastName">
-                </div>
-                <br>
-                <div>
-                    <i class="fa-solid fa-phone margin"></i>
-                    <label>Telephone</label>
-                    <input class="border-solid 
-                                    border-2 
-                                    border-black
-                                    rounded-lg
-                                    ml-2
-                                    pl-1
-                                    pt-1
-                                    pb-1
-                                    pr-1 
-                                    bg-gray-300" readonly [(ngModel)]="contact.telephone">
-                </div>
-                <br>
-                <button class="border-solid
-                border-2
-                border-black
-                bg-green-600
-                centre
-                rounded-lg
-                ml-2" (click)="openContactDetails()">
-                    <p class="ml-1 mr-1 mu-1 md-1">Open Details</p>
-                </button>
-
-                <button class="border-solid
-                border-2 
-                border-black
-                bg-red-500
-                centre
-                rounded-lg
-                ml-2" (click)="deleteContact()">
-                    <p class="ml-1 mr-1 mu-1 md-1">Delete</p>
-                </button>
-
-                <button class="
-                border-solid
-                border-2
-                border-black
-                ml-2
-                mt-2
-                rounded-lg
-                bg-fuchsia-400" (click)="removeFromSavedJobs()">
-                    <p class="ml-1 mr-1 mu-1 md-1">Remove from saved contacts</p>
-                </button>
-
-                
+        <input readonly [(ngModel)]="indexNumber" class="rounded-lg border-black border-2 border-regular w-10 bg-gray-300 centre ml-2 mt-2">
+        
+        <div class="centre">
             
+            <div>
+                <i class="fa-solid fa-user margin"></i>
+                <label>First Name</label>
+                <input class="border-solid 
+                                border-2 
+                                border-black
+                                rounded-lg
+                                ml-2
+                                pl-1
+                                pt-1
+                                pb-1
+                                pr-1 
+                                bg-gray-300" readonly [(ngModel)]="contact.firstName">
             </div>
+            <br>
+
+
+            <div>
+                <i class="fa-solid fa-people-group margin"></i>
+                <label>Last Name</label>
+                <input class="border-solid 
+                                border-2 
+                                border-black
+                                rounded-lg
+                                ml-2
+                                pl-1
+                                pt-1
+                                pb-1
+                                pr-1 
+                                bg-gray-300" readonly [(ngModel)]="contact.lastName">
+            </div>
+            <br>
+            <div>
+                <i class="fa-solid fa-phone margin"></i>
+                <label>Telephone</label>
+                <input class="border-solid 
+                                border-2 
+                                border-black
+                                rounded-lg
+                                ml-2
+                                pl-1
+                                pt-1
+                                pb-1
+                                pr-1 
+                                bg-gray-300" readonly [(ngModel)]="contact.telephone">
+            </div>
+            <br>
+            <button class="border-solid
+            border-2
+            border-black
+            bg-green-600
+            centre
+            rounded-lg
+            ml-2" (click)="openContactDetails()">
+                <p class="ml-1 mr-1 mu-1 md-1">Open Details</p>
+            </button>
+
+            <button class="border-solid
+            border-2 
+            border-black
+            bg-red-500
+            centre
+            rounded-lg
+            ml-2" (click)="deleteContact()">
+                <p class="ml-1 mr-1 mu-1 md-1">Delete</p>
+            </button>
+
+            <button class="
+            border-solid
+            border-2
+            border-black
+            ml-2
+            mt-2
+            rounded-lg
+            bg-fuchsia-400" (click)="removeFromSavedJobs()">
+                <p class="ml-1 mr-1 mu-1 md-1">Remove from saved contacts</p>
+            </button>
+
+            
+        
+        </div>
+    </div>
+
+            
             
             <div class="bg-gray-400">
                 <br>

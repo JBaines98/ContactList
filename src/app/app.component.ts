@@ -24,22 +24,23 @@ export class AppComponent {
   searchFilter?: string = undefined;
   searchParamters?: string = undefined;
   data?: any = undefined;
+  searchBySelect: string = '';
 
   public behaviorSearchFilter$ = new BehaviorSubject<any>('');
   public searchFilter$ = this.behaviorSearchFilter$.asObservable();
 
   public destroyed$ = new Subject();
 
-  constructor(public contactService: ContactService) {}
+  constructor(public contactService: ContactService) {};
 
   ngOnInit() {
     combineLatest([this.searchFilter$, this.contactService.contactsList$])
       .pipe(
         tap(
           ([searchFilter, contactList]) =>
-            this.contactList = contactList.filter((x) =>
-              x.lastName?.includes(searchFilter)
-            )
+            {
+              this.searchByFilter(searchFilter, contactList)
+            }
         ),
         takeUntil(this.destroyed$)
       )
@@ -51,21 +52,80 @@ export class AppComponent {
     //   }),
 
     // ).subscribe();
-  }
+  };
 
   ngOnDestroy(): void {
     this.destroyed$.next(this.destroyed$);
     this.destroyed$.complete();
-  }
+  };
+
+  searchByFilter(searchFilter: string, contactList: Contact[]){
+    switch(this.searchBySelect){
+      case 'firstName': {
+        this.contactList = contactList.filter((x) => 
+        x.firstName?.includes(searchFilter))
+        break;
+      }
+      case 'lastName': {
+        this.contactList = contactList.filter((x) =>
+        x.lastName?.includes(searchFilter))
+        break;
+      }
+      case 'addressFirstLine': {
+        this.contactList = contactList.filter((x) => 
+        x.addressFirstLine?.includes(searchFilter))
+        break;
+      }
+      case 'addressSecondLine': {
+        this.contactList = contactList.filter((x) => 
+        x.addressSecondLine?.includes(searchFilter))
+        break;
+      }
+      case 'cityOrTown': {
+        this.contactList = contactList.filter((x) => 
+        x.cityOrTown?.includes(searchFilter))
+        break;
+      }
+      case 'county': {
+        this.contactList = contactList.filter((x) =>
+        x.county?.includes(searchFilter))
+        break;
+      }
+      case 'postCode': {
+        this.contactList = contactList.filter((x) =>
+        x.postCode?.includes(searchFilter))
+        break;
+      }
+      case 'email': {
+        this.contactList = contactList.filter((x) => 
+        x.email?.includes(searchFilter))
+        break;
+      }
+      case 'dateOfBirth': {
+        this.contactList = contactList.filter((x) =>
+        x.dateOfBirth?.includes(searchFilter))
+        break;
+      }
+      case 'telephone': {
+        this.contactList = contactList.filter((x) =>
+        x.telephone?.includes(searchFilter))
+        break;
+      }
+      default: {
+        this.contactList = contactList
+        break;
+      }
+    }
+  };
 
   saveContactList() {
     this.contactService.saveContactsList(this.contactList);
-  }
+  };
 
   clearSavedJobs() {
     this.contactService.clearSaveJobs();
     this.showContactList = false;
-  }
+  };
 
   searchFilterInputed(){
     this.searchFilter = this.searchParamters;

@@ -17,20 +17,35 @@
       </span>
 
       <div class="ml-2 mt-2 mr-2 mb-2">
+
+        <select name="searchBy" [(ngModel)]="searchBySelect" class="bg-gray-300 border-solid border-black border-2 rounded-lg w-40">
+          <option value="firstName">First Name</option>
+          <option value="lastName">Last Name</option>
+          <option value="addressFirstLine">Address First Line</option>
+          <option value="addressSecondLine">Address Second Line</option>
+          <option value="cityOrTown">City or Town</option>
+          <option value="county">County</option>
+          <option value="postCode">Post Code</option>
+          <option value="email">Email Address</option>
+          <option value="dateOfBirth">Date of Birth</option>
+          <option value="telephone">Telephone</option>
+        </select>
+
         <label class="ml-2 mr-2 mt-2 mb-2"><strong>Search</strong></label>
         <input [(ngModel)]="searchParamters" class="pr-1 pl-1 pt-1 pb-1 bg-gray-300 border-2 border-solid border-black rounded-lg">
-        <button (click)="searchFilterInputed()" class="ml-2 border-2 border-black border-solid rounded-lg bg-green-600">
-          <p class="pr-2 pl-2 pt-1 pb-1"><i class="fa-solid fa-arrow-right"></i></p>
+        <br>
+        <button (click)="searchFilterInputed()" class="ml-2 mt-2 border-2 border-black border-solid rounded-lg bg-green-600">
+          <p class="pr-2 pl-2 pt-1 pb-1"><strong>Search</strong></p>
         </button>
         <button (click)="clearSearchFilterInputed()" class="ml-2 border-2 border-black border-solid rounded-lg bg-red-500">
-          <p class="pr-2 pl-2 pt-1 pb-1"><i class="fa-solid fa-xmark"></i></p>
+          <p class="pr-2 pl-2 pt-1 pb-1"><strong>Clear</strong></p>
         </button>
       </div>
 
       <button
         class="w-60 border-2 border-black ml-2 bg-amber-400 rounded-lg mt-4 mb-4"
         (click)="saveContactList()"
-      >
+        >
         <strong>Save Contact List</strong>
       </button>
       <button
@@ -43,9 +58,10 @@
 
     
       @if (contactList.length > 0){
+        <app-number-of-contacts></app-number-of-contacts>
         @for (contact of contactList; track contact){
           <div class="w-5/6 mt-6 mr-6 mb-6 ml-6">
-            <app-contact-list [contact]="contact" [showFunctions]="true">
+            <app-contact-list [contact]="contact" [showFunctions]="true" [indexNumber]="contactList.indexOf(contact)">
             </app-contact-list>
           </div>
         }
