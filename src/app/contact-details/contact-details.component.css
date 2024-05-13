@@ -1,0 +1,16 @@
+.hrLine{
+    color: black;
+}
+.centre{
+    text-align: center;
+}
+.margin{
+    margin-left: 20%;
+}
+.centreTable{
+    margin-left: auto;
+    margin-right: auto;
+}
+.width {
+    width: fit-content;
+}

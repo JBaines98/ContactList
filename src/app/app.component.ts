@@ -25,6 +25,8 @@ export class AppComponent {
   searchParamters?: string = undefined;
   data?: any = undefined;
   searchBySelect: string = '';
+  showContactDetails: boolean = false;
+  contactSelected: Contact = {};
 
   public behaviorSearchFilter$ = new BehaviorSubject<any>('');
   public searchFilter$ = this.behaviorSearchFilter$.asObservable();
@@ -43,8 +45,17 @@ export class AppComponent {
             }
         ),
         takeUntil(this.destroyed$)
-      )
-      .subscribe();
+      ).subscribe();
+
+      this.contactService.contactDetails$.pipe(
+        tap((contactDetails) => {
+          this.contactSelected = contactDetails;
+          // if(this.contactSelected){
+          //   this.showContactDetails = true;
+          // };
+        }),
+        takeUntil(this.destroyed$)
+      ).subscribe();
 
     // this.contactService.contactsList$.pipe(
     //   tap((contactList) => {
@@ -126,6 +137,12 @@ export class AppComponent {
     this.contactService.clearSaveJobs();
     this.showContactList = false;
   };
+
+  openDetailsClicked(contactDetails: Contact){
+    this.showContactDetails = true;
+    this.contactSelected = contactDetails;
+    console.log("JACK IS GREAT")
+  }
 
   searchFilterInputed(){
     this.searchFilter = this.searchParamters;

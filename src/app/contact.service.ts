@@ -10,13 +10,16 @@ export class ContactService {
 
   contactToAdd: Contact = {};
   contactList: Contact[] = [];
+  contactToEdit: Contact = {};
   contactDetailsToOpen: Contact = {};
 
   public destroyed$ = new Subject();
   private behaviorContactsList$ = new BehaviorSubject<Contact[]>([{}]);
   public contactsList$ = this.behaviorContactsList$.asObservable();
-  private behaviorDetailsToOpen$ = new BehaviorSubject<Contact>({});
-  public contactDetailsToOpen$ = this.behaviorDetailsToOpen$.asObservable();
+  private behaviorDetailsToEdit$ = new BehaviorSubject<Contact>({});
+  public contactDetailsToEdit$ = this.behaviorDetailsToEdit$.asObservable();
+  private behaviorContactDetails$ = new BehaviorSubject<Contact>({});
+  public contactDetails$ = this.behaviorContactDetails$.asObservable();
 
   constructor(public localStorageService: LocalStorageService) {
     this.localStorageService.getSavedContactsSaved()
@@ -43,9 +46,14 @@ export class ContactService {
     this.contactToAdd = {};
   };
 
+  editContactDetails(contact: Contact){
+    this.contactToEdit = contact;
+    this.behaviorDetailsToEdit$.next(this.contactToEdit);
+  };
+
   openContactDetails(contact: Contact){
     this.contactDetailsToOpen = contact;
-    this.behaviorDetailsToOpen$.next(this.contactDetailsToOpen);
+    this.behaviorContactDetails$.next(this.contactDetailsToOpen);
   };
 
   saveContactsList(contactList: Contact[]){

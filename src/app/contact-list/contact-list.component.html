@@ -1,113 +1,160 @@
-<div class="w-full
-border-2
-border-regular
-rounded-lg
-border-black">
-    <div class="bg-gray-400">
 
-        <input readonly [(ngModel)]="indexNumber" class="rounded-lg border-black border-2 border-regular w-10 bg-gray-300 centre ml-2 mt-2">
-        
-        <div class="centre">
-            
-            <div>
-                <i class="fa-solid fa-user margin"></i>
-                <label>First Name</label>
+
+
+
+<br>
+@if (isExpanded === false) {
+    <div class="border-2 border-black border-solid rounded-lg bg-gray-400">
+        <div class="width pr-2 pl-2 pt-2 pb-2">
+            <i class="fa-solid fa-user margin"></i>
+            <label><strong>Name</strong></label>
+            <span>
                 <input class="border-solid 
-                                border-2 
-                                border-black
-                                rounded-lg
-                                ml-2
-                                pl-1
-                                pt-1
-                                pb-1
-                                pr-1 
-                                bg-gray-300" readonly [(ngModel)]="contact.firstName">
-            </div>
-            <br>
-
-
-            <div>
-                <i class="fa-solid fa-people-group margin"></i>
-                <label>Last Name</label>
+                border-2 
+                border-black
+                rounded-lg
+                ml-2
+                width
+                pl-1
+                pt-1
+                pb-1
+                pr-1 
+                bg-gray-300" readonly [(ngModel)]="contact.firstName">
                 <input class="border-solid 
-                                border-2 
-                                border-black
-                                rounded-lg
-                                ml-2
-                                pl-1
-                                pt-1
-                                pb-1
-                                pr-1 
-                                bg-gray-300" readonly [(ngModel)]="contact.lastName">
-            </div>
-            <br>
-            <div>
-                <i class="fa-solid fa-phone margin"></i>
-                <label>Telephone</label>
-                <input class="border-solid 
-                                border-2 
-                                border-black
-                                rounded-lg
-                                ml-2
-                                pl-1
-                                pt-1
-                                pb-1
-                                pr-1 
-                                bg-gray-300" readonly [(ngModel)]="contact.telephone">
-            </div>
-            <br>
-            <button class="border-solid
-            border-2
-            border-black
-            bg-green-600
-            centre
-            rounded-lg
-            ml-2" (click)="openContactDetails()">
-                <p class="ml-1 mr-1 mu-1 md-1">Open Details</p>
-            </button>
-
-            <button class="border-solid
-            border-2 
-            border-black
-            bg-red-500
-            centre
-            rounded-lg
-            ml-2" (click)="deleteContact()">
-                <p class="ml-1 mr-1 mu-1 md-1">Delete</p>
-            </button>
-
-            <button class="
-            border-solid
-            border-2
-            border-black
-            ml-2
-            mt-2
-            rounded-lg
-            bg-fuchsia-400" (click)="removeFromSavedJobs()">
-                <p class="ml-1 mr-1 mu-1 md-1">Remove from saved contacts</p>
-            </button>
-
-            
-        
+                border-2 
+                border-black
+                rounded-lg
+                ml-1
+                width
+                pl-1
+                pt-1
+                pb-1
+                pr-1 
+                bg-gray-300" readonly [(ngModel)]="contact.lastName">
+            </span>
+            <button (click)="isExpanded = !isExpanded" class=" border-black border-regular border-2 rounded-lg ml-1 pl-2 pr-2 bg-amber-400"><strong>Expand</strong></button>
         </div>
     </div>
-
-            
-            
+} @else if (isExpanded === true) {
+    <div>
+        <div class="w-full
+        border-2
+        border-regular
+        rounded-lg
+        border-black">
             <div class="bg-gray-400">
-                <br>
-            </div>
-</div>
+        
+                <input readonly [(ngModel)]="indexNumber" class="rounded-lg border-black border-2 border-regular w-10 bg-gray-300 centre ml-2 mt-2">
+                
+                <div class="centre">
+                    
+                    <div>
+                        <i class="fa-solid fa-user margin"></i>
+                        <label><strong>First Name</strong></label>
+                        <input class="border-solid 
+                        border-2 
+                        border-black
+                        rounded-lg
+                        ml-2
+                        pl-1
+                        pt-1
+                        pb-1
+                        pr-1 
+                        bg-gray-300" readonly [(ngModel)]="contact.firstName">
+                    </div>
+                    <br>
+        
+        
+                    <div>
+                        <i class="fa-solid fa-people-group margin"></i>
+                        <label><strong>Last Name</strong></label>
+                        <input class="border-solid 
+                                        border-2 
+                                        border-black
+                                        rounded-lg
+                                        ml-2
+                                        pl-1
+                                        pt-1
+                                        pb-1
+                                        pr-1 
+                                        bg-gray-300" readonly [(ngModel)]="contact.lastName">
+                    </div>
+                    <br>
+                    <div>
+                        <i class="fa-solid fa-phone margin"></i>
+                        <label><strong>Telephone</strong></label>
+                        <input class="border-solid 
+                                        border-2 
+                                        border-black
+                                        rounded-lg
+                                        ml-2
+                                        pl-1
+                                        pt-1
+                                        pb-1
+                                        pr-1 
+                                        bg-gray-300" readonly [(ngModel)]="contact.telephone">
+                    </div>
+                    <br>
+                    <button class="border-solid
+                    border-2
+                    border-black
+                    bg-green-600
+                    centre
+                    rounded-lg
+                    ml-2" (click)="editContactDetails()">
+                        <p class="ml-1 mr-1 mu-1 md-1"><strong>Edit Details</strong></p>
+                    </button>
 
-<div>
-    HELLO WORLD
-    <button (click)="expandClicked()"><strong>+</strong></button>
-    @if (isExpanded === true) {
-        <div>
-            <p>THIS IS A SECRET</p>
+                    <button class="
+                    border-solid
+                    border-black
+                    border-2
+                    ml-2
+                    centre
+                    rounded-lg
+                    bg-emerald-400" (click)="openContactDetails()">
+                        <p class="ml-1 mr-1 mu-1 md-1"><strong>Open Details</strong></p>
+                    </button>
+        
+                    <button class="border-solid
+                    border-2 
+                    border-black
+                    bg-red-500
+                    centre
+                    rounded-lg
+                    ml-2" (click)="deleteContact()">
+                        <p class="ml-1 mr-1 mu-1 md-1"><strong>Delete</strong></p>
+                    </button>
+        
+                    <button class="
+                    border-solid
+                    border-2
+                    border-black
+                    ml-2
+                    mt-2
+                    rounded-lg
+                    bg-fuchsia-400" (click)="removeFromSavedJobs()">
+                        <p class="ml-1 mr-1 mu-1 md-1"><strong>Remove from saved contacts</strong></p>
+                    </button>
+
+
+        
+                    <button (click)="isExpanded = !isExpanded" class=" border-black border-regular border-2 rounded-lg ml-1 pl-2 pr-2 bg-amber-400"><strong>Minimise</strong></button>
+                
+                </div>
+            </div>
+        
+                    
+                    
+                    <div class="bg-gray-400">
+                        <br>
+                    </div>
         </div>
-    }
-</div>
+    </div>
+}
+
+
+
 
 
 

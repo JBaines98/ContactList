@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ContactService } from '../contact.service';
 import { Contact } from '../contact.model';
 import { Subject, takeUntil, tap } from 'rxjs';
@@ -14,6 +14,8 @@ export class ContactListComponent {
   @Input() showFunctions: boolean = false;
   @Input() contact: Contact = {};
   @Input() indexNumber: number = 0;
+  @Output() openDetailsClicked: EventEmitter<boolean> = new EventEmitter();
+  @Output() contactToEmit: EventEmitter<Contact> = new EventEmitter();
 
   isExpanded: boolean = false;
 
@@ -28,21 +30,19 @@ export class ContactListComponent {
     this.contactService.deleteContact(this.contact);
   };
 
-  openContactDetails(){
-    this.contactService.openContactDetails(this.contact);
+  editContactDetails(){
+    this.contactService.editContactDetails(this.contact);
   };
 
   removeFromSavedJobs(){
     this.contactService.removeFromSavedjobs(this.contact);
   };
 
-  expandClicked(){
-    if(this.isExpanded === false){
-      this.isExpanded = true;
-    }else{
-      this.isExpanded = false;
-    }
+  openContactDetails(){
+    this.openDetailsClicked.emit(true);
+    this.contactToEmit.emit(this.contact);
   }
+
 
   // ngOnInit(){
   //   this.contactService.contactsList$.pipe(

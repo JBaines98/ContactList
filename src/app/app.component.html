@@ -60,8 +60,8 @@
       @if (contactList.length > 0){
         <app-number-of-contacts></app-number-of-contacts>
         @for (contact of contactList; track contact){
-          <div class="w-5/6 mt-6 mr-6 mb-6 ml-6">
-            <app-contact-list [contact]="contact" [showFunctions]="true" [indexNumber]="contactList.indexOf(contact)">
+          <div class=" mt-6 mr-6 mb-6 ml-6">
+            <app-contact-list (contactToEmit)="openDetailsClicked($event)" [contact]="contact" [showFunctions]="true" [indexNumber]="contactList.indexOf(contact)">
             </app-contact-list>
           </div>
         }
@@ -71,10 +71,16 @@
       }
   </div>
 
-
-
   <div class="form bg-gray-300 border-black border-l-2 border-r-2">
-    <!-- <app-form (contactEntered)="contactEntered($event)"></app-form> -->
-    <app-form></app-form>
+    <app-contact-details [contactDetails]="contactSelected"></app-contact-details>
   </div>
+
+<!-- 
+  <div class="form bg-gray-300 border-black border-l-2 border-r-2">
+    @if (showContactDetails === false) {
+      <app-form></app-form>
+    }@else{
+      <app-contact-details [contactDetails]="contactSelected"></app-contact-details>
+    }
+  </div> -->
 </div>

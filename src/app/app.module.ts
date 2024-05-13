@@ -7,6 +7,7 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { FormComponent } from './form/form.component';
 import { NoSavedContactsComponent } from "./no-saved-contacts/no-saved-contacts.component";
 import { NumberOfContactsComponent } from "./number-of-contacts/number-of-contacts.component";
+import { ContactDetailsComponent } from "./contact-details/contact-details.component";
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { NumberOfContactsComponent } from "./number-of-contacts/number-of-contac
         BrowserModule,
         FormsModule,
         NoSavedContactsComponent,
-        NumberOfContactsComponent
+        NumberOfContactsComponent,
+        ContactDetailsComponent
     ]
 })
 export class AppModule { }

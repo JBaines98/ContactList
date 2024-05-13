@@ -4,3 +4,6 @@
 .margin{
     margin-right: 10px;
 }
+.width {
+    width: fit-content;
+}

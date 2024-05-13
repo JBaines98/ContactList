@@ -30,7 +30,7 @@ export class FormComponent {
   @Output() contactEntered = new EventEmitter();
 
   ngOnInit(){
-    this.contactService.contactDetailsToOpen$.pipe(
+    this.contactService.contactDetailsToEdit$.pipe(
       tap((contactDetails) => {
         this.contact = contactDetails;
       }),
