@@ -15,6 +15,8 @@ export class ContactListComponent {
   @Input() contact: Contact = {};
   @Input() indexNumber: number = 0;
 
+  isExpanded: boolean = false;
+
   constructor(public contactService: ContactService){}
 
   ngOnInit(){
@@ -33,6 +35,14 @@ export class ContactListComponent {
   removeFromSavedJobs(){
     this.contactService.removeFromSavedjobs(this.contact);
   };
+
+  expandClicked(){
+    if(this.isExpanded === false){
+      this.isExpanded = true;
+    }else{
+      this.isExpanded = false;
+    }
+  }
 
   // ngOnInit(){
   //   this.contactService.contactsList$.pipe(
