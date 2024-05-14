@@ -25,7 +25,7 @@ export class AppComponent {
   searchParamters?: string = undefined;
   data?: any = undefined;
   searchBySelect: string = '';
-  showContactDetails: boolean = false;
+  showEditOrOpen: string = 'edit';
   contactSelected: Contact = {};
 
   public behaviorSearchFilter$ = new BehaviorSubject<any>('');
@@ -53,6 +53,13 @@ export class AppComponent {
           // if(this.contactSelected){
           //   this.showContactDetails = true;
           // };
+        }),
+        takeUntil(this.destroyed$)
+      ).subscribe();
+
+      this.contactService.showEditOrOpen$.pipe(
+        tap((showEditOrOpen) => {
+          this.showEditOrOpen = showEditOrOpen;
         }),
         takeUntil(this.destroyed$)
       ).subscribe();
@@ -139,7 +146,7 @@ export class AppComponent {
   };
 
   openDetailsClicked(contactDetails: Contact){
-    this.showContactDetails = true;
+    this.showEditOrOpen = 'open';
     this.contactSelected = contactDetails;
     console.log("JACK IS GREAT")
   }

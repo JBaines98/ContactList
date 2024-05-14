@@ -32,7 +32,7 @@
                 pr-1 
                 bg-gray-300" readonly [(ngModel)]="contact.lastName">
             </span>
-            <button (click)="isExpanded = !isExpanded" class=" border-black border-regular border-2 rounded-lg ml-1 pl-2 pr-2 bg-amber-400"><strong>Expand</strong></button>
+            <button (click)="isExpanded = !isExpanded" class=" border-black border-regular border-2 rounded-lg ml-1 pl-2 pr-2 bg-amber-400"><strong><i class="fa-solid fa-angle-down"></i></strong></button>
         </div>
     </div>
 } @else if (isExpanded === true) {
@@ -44,7 +44,13 @@
         border-black">
             <div class="bg-gray-400">
         
-                <input readonly [(ngModel)]="indexNumber" class="rounded-lg border-black border-2 border-regular w-10 bg-gray-300 centre ml-2 mt-2">
+                <div class="flex flex-row">
+                    <input readonly [(ngModel)]="indexNumber" class="rounded-lg border-black border-2 border-regular w-10 bg-gray-300 centre ml-2 mt-1">
+                    <button (click)="isExpanded = !isExpanded" class="marginLeft border-black border-regular border-2 rounded-lg ml-1 pl-2 pr-2 mt-1 bg-amber-400">
+                        <strong><i class="fa-solid fa-angle-up"></i></strong>
+                    </button>
+                </div>
+
                 
                 <div class="centre">
                     
@@ -139,7 +145,7 @@
 
 
         
-                    <button (click)="isExpanded = !isExpanded" class=" border-black border-regular border-2 rounded-lg ml-1 pl-2 pr-2 bg-amber-400"><strong>Minimise</strong></button>
+
                 
                 </div>
             </div>

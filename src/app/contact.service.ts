@@ -20,6 +20,8 @@ export class ContactService {
   public contactDetailsToEdit$ = this.behaviorDetailsToEdit$.asObservable();
   private behaviorContactDetails$ = new BehaviorSubject<Contact>({});
   public contactDetails$ = this.behaviorContactDetails$.asObservable();
+  private behaviorShowEditOrOpen$ = new BehaviorSubject<string>('edit');
+  public showEditOrOpen$ = this.behaviorShowEditOrOpen$.asObservable();
 
   constructor(public localStorageService: LocalStorageService) {
     this.localStorageService.getSavedContactsSaved()
@@ -30,7 +32,7 @@ export class ContactService {
       }),
       takeUntil(this.destroyed$)
     ).subscribe();
-  }
+  };
 
   ngOnDestroy(): void {
     this.destroyed$.next(this.destroyed$);
@@ -49,11 +51,13 @@ export class ContactService {
   editContactDetails(contact: Contact){
     this.contactToEdit = contact;
     this.behaviorDetailsToEdit$.next(this.contactToEdit);
+    this.behaviorShowEditOrOpen$.next('edit');
   };
 
   openContactDetails(contact: Contact){
     this.contactDetailsToOpen = contact;
     this.behaviorContactDetails$.next(this.contactDetailsToOpen);
+    this.behaviorShowEditOrOpen$.next('open');
   };
 
   saveContactsList(contactList: Contact[]){

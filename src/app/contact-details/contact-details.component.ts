@@ -12,13 +12,17 @@ import { ContactService } from '../contact.service';
 export class ContactDetailsComponent {
 
 
-@Input() contactDetails: Contact = {};
-contact: Contact = {};
+  @Input() contactDetails: Contact = {};
+  contact: Contact = {};
 
-constructor(public contactService: ContactService){}
+  constructor(public contactService: ContactService){}
 
-ngOnInit(){
-  this.contact = this.contactDetails;
-}
+  ngOnInit(){
+    this.contact = this.contactDetails;
+  }
+
+  editContactDetails(){
+    this.contactService.editContactDetails(this.contact);
+  }
 
 }
