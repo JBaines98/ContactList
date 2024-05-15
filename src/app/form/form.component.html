@@ -13,29 +13,20 @@
 
 <div>
     <div class="centreTable border-regular border-black rounded-lg border-2 w-5/6 mt-6 mr-6 mb-6 ml-6 bg-gray-400">
-        <table class="centreTable">
-            <tr>
-                <th class="w-32">
-                    <p class="centre">
-                        
-                    </p>
-                </th>
-                <th>
-                    
-                </th>
-                <th>
-                    
-                </th>
-            </tr>
+        <div class="centreTable pr-2 pl-2 pt-2 pb-2">
             <br>
-            <tr>
-                <td class="centre">
-                    <i class="fa-solid fa-user"></i>
-                </td>
-                <td>
+            <div class="flex flex-row">
+                <div class="centre w-1/5">
+                    @if (this.contact.firstName) {
+                        <i class="fa-solid fa-user ml-4 fa-xl green"></i>
+                    }@else{
+                        <i class="fa-solid fa-user ml-4 fa-xl red"></i>
+                    }
+                </div>
+                <div class="w-1/4 text-left">
                     <strong>First Name</strong>
-                </td>
-                <td>
+                </div>
+                <div class="w-1/2 centre mr-2">
                     <input [(ngModel)]="contact.firstName"
                         class="border-solid
                                 border-2
@@ -45,19 +36,24 @@
                                 pl-1
                                 pt-1
                                 pb-1
-                                pr-1 
+                                pr-1
+                                min-w-full 
                                 bg-gray-300">
-                </td>
-            </tr>
+                </div>
+            </div>
             <br>
-            <tr>
-                <td class="centre">
-                    <i class="fa-solid fa-people-group"></i>
-                </td>
-                <td>
+            <div class="flex flex-row">
+                <div class="centre w-1/5">
+                    @if (this.contact.lastName) {
+                        <i class="fa-solid fa-people-group ml-4 fa-xl green"></i>
+                    }@else{
+                        <i class="fa-solid fa-people-group ml-4 fa-xl red"></i>
+                    }
+                </div>
+                <div class="w-1/4 text-left">
                     <strong>Last Name</strong>
-                </td>
-                <td>
+                </div>
+                <div class="w-1/2 centre mr-2">
                     <input [(ngModel)]="contact.lastName"
                         class="border-solid
                                 border-2
@@ -67,19 +63,24 @@
                                 pl-1
                                 pt-1
                                 pb-1
-                                pr-1 
+                                pr-1
+                                min-w-full 
                                 bg-gray-300">
-                </td>
-            </tr>
+                </div>
+            </div>
             <br>
-            <tr>
-                <td class="centre">
-                    <i class="fa-solid fa-location-dot"></i>
-                </td>
-                <td>
+            <div class="flex flex-row">
+                <div class="w-1/5 centre">
+                    @if (this.contact.addressFirstLine) {
+                        <i class="fa-solid fa-location-dot ml-4 fa-xl green"></i>
+                    }@else{
+                        <i class="fa-solid fa-location-dot ml-4 fa-xl red"></i>
+                    }
+                </div>
+                <div class="w-1/4 text-left">
                     <strong>Address First Line</strong>
-                </td>
-                <td>
+                </div>
+                <div class="w-1/2 centre mr-2">
                     <input [(ngModel)]="contact.addressFirstLine"
                         class="border-solid
                                 border-2
@@ -89,19 +90,24 @@
                                 pl-1
                                 pt-1
                                 pb-1
-                                pr-1 
+                                pr-1
+                                min-w-full 
                                 bg-gray-300">
-                </td>
-            </tr>
+                </div>
+            </div>
             <br>
-            <tr>
-                <td class="centre">
-                    <i class="fa-solid fa-location-dot"></i>
-                </td>
-                <td>
+            <div class="flex flex-row">
+                <div class="w-1/5 centre">
+                    @if (this.contact.addressSecondLine) {
+                        <i class="fa-solid fa-location-dot ml-4 fa-xl green"></i>
+                    }@else{
+                        <i class="fa-solid fa-location-dot ml-4 fa-xl red"></i>
+                    }
+                </div>
+                <div class="w-1/4 text-left">
                     <strong>Address Second Line</strong>
-                </td>
-                <td>
+                </div>
+                <div class="centre w-1/2 mr-2">
                     <input [(ngModel)]="contact.addressSecondLine"
                         class="border-solid
                                 border-2
@@ -111,19 +117,24 @@
                                 pl-1
                                 pt-1
                                 pb-1
-                                pr-1 
+                                pr-1
+                                min-w-full 
                                 bg-gray-300">
-                </td>
-            </tr>
+                </div>
+            </div>
             <br>
-            <tr>
-                <td class="centre">
-                    <i class="fa-solid fa-city"></i>
-                </td>
-                <td>
+            <div class="flex flex-row">
+                <div class="w-1/5 centre">
+                    @if (this.contact.cityOrTown) {
+                        <i class="fa-solid fa-city ml-4 fa-xl green"></i>
+                    }@else{
+                        <i class="fa-solid fa-city ml-4 fa-xl red"></i>
+                    }
+                </div>
+                <div class="text-left w-1/4">
                     <strong>City or Town</strong>
-                </td>
-                <td>
+                </div>
+                <div class="centre w-1/2 mr-2">
                     <input [(ngModel)]="contact.cityOrTown"
                         class="border-solid
                                 border-2
@@ -133,19 +144,24 @@
                                 pl-1
                                 pt-1
                                 pb-1
-                                pr-1 
+                                pr-1
+                                min-w-full 
                                 bg-gray-300">
-                </td>
-            </tr>
+                </div>
+            </div>
             <br>
-            <tr>
-                <td class="centre">
-                    <i class="fa-solid fa-tower-cell"></i>
-                </td>
-                <td>
+            <div class="flex flex-row">
+                <div class="w-1/5 centre">
+                    @if (this.contact.county) {
+                        <i class="fa-solid fa-tower-cell ml-4 fa-xl green"></i>
+                    }@else{
+                        <i class="fa-solid fa-tower-cell ml-4 fa-xl red"></i>
+                    }
+                </div>
+                <div class="w-1/4 text-left">
                     <strong>County</strong>
-                </td>
-                <td>
+                </div>
+                <div class="centre w-1/2 mr-2">
                     <input [(ngModel)]="contact.county"
                         class="border-solid
                                 border-2
@@ -155,19 +171,24 @@
                                 pl-1
                                 pt-1
                                 pb-1
-                                pr-1 
+                                pr-1
+                                min-w-full 
                                 bg-gray-300">
-                </td>
-            </tr>
+                </div>
+            </div>
             <br>
-            <tr>
-                <td class="centre">
-                    <i class="fa-solid fa-envelope"></i>
-                </td>
-                <td>
+            <div class="flex flex-row">
+                <div class="w-1/5 centre">
+                    @if (this.contact.postCode) {
+                        <i class="fa-solid fa-envelope ml-4 fa-xl green"></i>
+                    }@else{
+                        <i class="fa-solid fa-envelope ml-4 fa-xl red"></i>
+                    }
+                </div>
+                <div class="w-1/4 text-left">
                     <strong>Post Code</strong>
-                </td>
-                <td>
+                </div>
+                <div class="w-1/2 mr-2 centre">
                     <input [(ngModel)]="contact.postCode"
                         class="border-solid
                                 border-2
@@ -177,19 +198,24 @@
                                 pl-1
                                 pt-1
                                 pb-1
-                                pr-1 
+                                pr-1
+                                min-w-full 
                                 bg-gray-300">
-                </td>
-            </tr>
+                </div>
+            </div>
             <br>
-            <tr>
-                <td class="centre">
-                    <i class="fa-solid fa-at"></i>
-                </td>
-                <td>
+            <div class="flex flex-row">
+                <div class="w-1/5 centre">
+                    @if (this.contact.email) {
+                        <i class="fa-solid fa-at ml-4 fa-xl green"></i>
+                    }@else{
+                        <i class="fa-solid fa-at ml-4 fa-xl red"></i>
+                    }
+                </div>
+                <div class="w-1/4 text-left">
                     <strong>Email Address</strong>
-                </td>
-                <td>
+                </div>
+                <div class="centre mr-2 w-1/2">
                     <input [(ngModel)]="contact.email"
                         class="border-solid
                                 border-2
@@ -199,19 +225,24 @@
                                 pl-1
                                 pt-1
                                 pb-1
-                                pr-1 
+                                pr-1
+                                min-w-full 
                                 bg-gray-300">
-                </td>
-            </tr>
+                </div>
+            </div>
             <br>
-            <tr>
-                <td class="centre">
-                    <i class="fa-solid fa-calendar-days"></i>
-                </td>
-                <td>
+            <div class="flex flex-row">
+                <div class="centre w-1/5">
+                    @if (this.contact.dateOfBirth) {
+                        <i class="fa-solid fa-calendar-days ml-4 fa-xl green"></i>
+                    }@else{
+                        <i class="fa-solid fa-calendar-days ml-4 fa-xl red"></i>
+                    }
+                </div>
+                <div class="text-left w-1/4">
                     <strong>Date of Birth</strong>
-                </td>
-                <td>
+                </div>
+                <div class="centre w-1/2 mr-2">
                     <input [(ngModel)]="contact.dateOfBirth"
                         class="border-solid
                                 border-2
@@ -221,19 +252,24 @@
                                 pl-1
                                 pt-1
                                 pb-1
-                                pr-1 
+                                pr-1
+                                min-w-full 
                                 bg-gray-300">
-                </td>
-            </tr>
+                </div>
+            </div>
             <br>
-            <tr>
-                <td class="centre">
-                    <i class="fa-solid fa-phone"></i>
-                </td>
-                <td>
+            <div class="flex flex-row">
+                <div class="centre w-1/5">
+                    @if (this.contact.telephone) {
+                        <i class="fa-solid fa-phone ml-4 fa-xl green"></i>
+                    }@else{
+                        <i class="fa-solid fa-phone ml-4 fa-xl red"></i>
+                    }
+                </div>
+                <div class="text-left w-1/4">
                     <strong>Telephone</strong>
-                </td>
-                <td>
+                </div>
+                <div class="centre w-1/2 mr-2">
                     <input [(ngModel)]="contact.telephone"
                         class="border-solid
                                 border-2
@@ -243,12 +279,13 @@
                                 pl-1
                                 pt-1
                                 pb-1
-                                pr-1 
+                                pr-1
+                                min-w-full 
                                 bg-gray-300">
-                </td>
-            </tr>
+                </div>
+            </div>
             <br>
-        </table>
+        </div>
     </div>
 
 </div>

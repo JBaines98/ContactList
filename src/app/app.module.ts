@@ -14,7 +14,8 @@ import { ContactDetailsComponent } from "./contact-details/contact-details.compo
         AppComponent,
         HeaderComponent,
         ContactListComponent,
-        FormComponent
+        FormComponent ,
+
     ],
     providers: [],
     bootstrap: [AppComponent],

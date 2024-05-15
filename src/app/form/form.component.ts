@@ -67,20 +67,25 @@ export class FormComponent {
 
   goButtonClicked(): void{
     // this.contactEntered.emit(this.contact);
-    this.contactService.addContact(this.contact);
-    console.log(this.contact);
-    this.contact = {
-      firstName: '',
-      lastName: '',
-      addressFirstLine: '',
-      addressSecondLine: '',
-      cityOrTown: '',
-      county: '',
-      postCode: '',
-      email: '',
-      dateOfBirth: '',
-      telephone: ''
+    if (this.contact.firstName && this.contact.lastName) {
+      this.contactService.addContact(this.contact);
+      console.log(this.contact);
+      this.contact = {
+        firstName: '',
+        lastName: '',
+        addressFirstLine: '',
+        addressSecondLine: '',
+        cityOrTown: '',
+        county: '',
+        postCode: '',
+        email: '',
+        dateOfBirth: '',
+        telephone: ''
+      };
+    }else{
+      alert("You must provide a first and last name.");
     };
+
   };
 
     clearButtonClicked(): void{

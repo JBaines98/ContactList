@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Contact } from '../contact.model';
 import { ContactService } from '../contact.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-details',
   standalone: true,
-  imports: [],
+  imports:[FormsModule],
   templateUrl: './contact-details.component.html',
   styleUrl: './contact-details.component.css'
 })
