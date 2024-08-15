@@ -9,7 +9,7 @@ export class LocalStorageService {
 
   savedContacts: any = undefined;
 
-  private behaviorSavedContacts$ = new BehaviorSubject<Contact[]>([{}]);
+  private behaviorSavedContacts$ = new BehaviorSubject<Contact[]>([]);
   public savedContacts$ = this.behaviorSavedContacts$.asObservable();
 
   constructor() { }

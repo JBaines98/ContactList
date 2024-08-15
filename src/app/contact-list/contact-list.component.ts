@@ -35,7 +35,7 @@ export class ContactListComponent {
   };
 
   removeFromSavedJobs(){
-    this.contactService.removeFromSavedjobs(this.contact);
+    this.contactService.removeFromSavedContacts(this.contact);
   };
 
   openContactDetails(){

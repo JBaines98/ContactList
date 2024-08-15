@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ContactService } from '../contact.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup} from '@angular/forms'
 import { Contact } from '../contact.model';
 import { Subject, takeUntil, tap } from 'rxjs';
 
@@ -11,7 +11,20 @@ import { Subject, takeUntil, tap } from 'rxjs';
 })
 export class FormComponent {
 
-  public contact: Contact = {
+  public contactForm = new FormGroup({
+    firstName: new FormControl<string>(''),
+    lastName: new FormControl<string>(''),
+    addressFirstLine: new FormControl<string>(''),
+    addressSecondLine: new FormControl<string>(''),
+    cityOrTown: new FormControl<string>(''),
+    county: new FormControl<string>(''),
+    postCode: new FormControl<string>(''),
+    email: new FormControl<string>(''),
+    dateOfBirth: new FormControl<string>(''),
+    telephone: new FormControl<string>(''),
+  });
+
+  public contact: any = {
     firstName: '',
     lastName: '',
     addressFirstLine: '',
@@ -33,6 +46,7 @@ export class FormComponent {
     this.contactService.contactDetailsToEdit$.pipe(
       tap((contactDetails) => {
         this.contact = contactDetails;
+        this.contactForm = this.contact
       }),
       takeUntil(this.destroyed$)
     ).subscribe();

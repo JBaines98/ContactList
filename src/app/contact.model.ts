@@ -1,4 +1,5 @@
 export interface Contact {
+    contactId?: number;
     firstName?: string;
     lastName?: string;
     addressFirstLine?: string;
@@ -8,7 +9,7 @@ export interface Contact {
     postCode?: string;
     email?: string;
     dateOfBirth?: string;
-    telephone?: string;
+    telephone?: any;
 }
 
 

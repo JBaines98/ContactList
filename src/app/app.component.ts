@@ -77,7 +77,7 @@ export class AppComponent {
     this.destroyed$.complete();
   };
 
-  searchByFilter(searchFilter: string, contactList: Contact[]){
+  searchByFilter(searchFilter: any, contactList: Contact[]){
     switch(this.searchBySelect){
       case 'firstName': {
         this.contactList = contactList.filter((x) => 
@@ -148,7 +148,6 @@ export class AppComponent {
   openDetailsClicked(contactDetails: Contact){
     this.showEditOrOpen = 'open';
     this.contactSelected = contactDetails;
-    console.log("JACK IS GREAT")
   }
 
   searchFilterInputed(){
@@ -161,6 +160,5 @@ export class AppComponent {
     this.behaviorSearchFilter$.next(this.searchFilter);
   };
 
-  //below should input parameter should be of type contact.
-  contactEntered(contact: any) {}
+
 }

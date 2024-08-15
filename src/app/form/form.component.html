@@ -13,7 +13,7 @@
 
 <div>
     <div class="centreTable border-regular border-black rounded-lg border-2 w-5/6 mt-6 mr-6 mb-6 ml-6 bg-gray-400">
-        <div class="centreTable pr-2 pl-2 pt-2 pb-2">
+        <form [formGroup]="contactForm" class="centreTable pr-2 pl-2 pt-2 pb-2">
             <br>
             <div class="flex flex-row">
                 <div class="centre w-1/5">
@@ -27,7 +27,7 @@
                     <strong>First Name</strong>
                 </div>
                 <div class="w-1/2 centre mr-2">
-                    <input [(ngModel)]="contact.firstName"
+                    <input [formControl]="contactForm.controls.firstName"
                         class="border-solid
                                 border-2
                                 border-black
@@ -54,7 +54,7 @@
                     <strong>Last Name</strong>
                 </div>
                 <div class="w-1/2 centre mr-2">
-                    <input [(ngModel)]="contact.lastName"
+                    <input [formControl]="contactForm.controls.lastName"
                         class="border-solid
                                 border-2
                                 border-black
@@ -81,7 +81,7 @@
                     <strong>Address First Line</strong>
                 </div>
                 <div class="w-1/2 centre mr-2">
-                    <input [(ngModel)]="contact.addressFirstLine"
+                    <input [formControl]="contactForm.controls.addressFirstLine"
                         class="border-solid
                                 border-2
                                 border-black
@@ -108,7 +108,7 @@
                     <strong>Address Second Line</strong>
                 </div>
                 <div class="centre w-1/2 mr-2">
-                    <input [(ngModel)]="contact.addressSecondLine"
+                    <input [formControl]="contactForm.controls.addressSecondLine"
                         class="border-solid
                                 border-2
                                 rounded-lg
@@ -135,7 +135,7 @@
                     <strong>City or Town</strong>
                 </div>
                 <div class="centre w-1/2 mr-2">
-                    <input [(ngModel)]="contact.cityOrTown"
+                    <input [formControl]="contactForm.controls.cityOrTown"
                         class="border-solid
                                 border-2
                                 rounded-lg
@@ -162,7 +162,7 @@
                     <strong>County</strong>
                 </div>
                 <div class="centre w-1/2 mr-2">
-                    <input [(ngModel)]="contact.county"
+                    <input [formControl]="contactForm.controls.county"
                         class="border-solid
                                 border-2
                                 border-black
@@ -189,7 +189,7 @@
                     <strong>Post Code</strong>
                 </div>
                 <div class="w-1/2 mr-2 centre">
-                    <input [(ngModel)]="contact.postCode"
+                    <input [formControl]="contactForm.controls.postCode"
                         class="border-solid
                                 border-2
                                 rounded-lg
@@ -216,7 +216,7 @@
                     <strong>Email Address</strong>
                 </div>
                 <div class="centre mr-2 w-1/2">
-                    <input [(ngModel)]="contact.email"
+                    <input [formControl]="contactForm.controls.email"
                         class="border-solid
                                 border-2
                                 rounded-lg
@@ -243,7 +243,7 @@
                     <strong>Date of Birth</strong>
                 </div>
                 <div class="centre w-1/2 mr-2">
-                    <input [(ngModel)]="contact.dateOfBirth"
+                    <input [formControl]="contactForm.controls.dateOfBirth"
                         class="border-solid
                                 border-2
                                 rounded-lg
@@ -270,7 +270,7 @@
                     <strong>Telephone</strong>
                 </div>
                 <div class="centre w-1/2 mr-2">
-                    <input [(ngModel)]="contact.telephone"
+                    <input [formControl]="contactForm.controls.telephone"
                         class="border-solid
                                 border-2
                                 rounded-lg
@@ -285,7 +285,7 @@
                 </div>
             </div>
             <br>
-        </div>
+        </form>
     </div>
 
 </div>
